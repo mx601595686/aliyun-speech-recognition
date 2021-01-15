@@ -8,10 +8,7 @@ const child_process = require('child_process');
  * 单声道 16k采样率 MP3 文件
  */
 
-/**
-* 输出文件夹路径
-*/
-const outputPath = path.resolve(__dirname, '../recognition_audios');
+const outputPath = require('../app_config').transcodeAudiosPath;
 fs.ensureDirSync(outputPath);
 
 const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
