@@ -3,9 +3,9 @@
     "version": "0.0.1",
     "description": "阿里云语音识别工具包",
     "scripts": {
-        "recognition": "node src/recognition.js",
-        "transcode": "node src/transcode.js",
-        "get_result_by_taskID": "node src/get_result_by_taskID.js"
+        "receive_result": "node tools/receive_result.js",
+        "submit_task": "node tools/submit_task.js",
+        "transcode": "node tools/transcode.js"
     },
     "repository": {
         "type": "git",

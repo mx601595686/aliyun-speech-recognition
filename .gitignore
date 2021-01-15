@@ -102,3 +102,9 @@ dist
 
 # TernJS port file
 .tern-port
+
+/transcode_audios
+
+/recognition_results
+
+/app_config.js
