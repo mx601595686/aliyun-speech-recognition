@@ -45,7 +45,7 @@ const task = {
  * @returns TaskId
  */
 async function submitTask(filename) {
-    const file_link = encodeURI(path.resolve(appConfig.fileServerRoot, filename));
+    const file_link = encodeURI(appConfig.fileServerRoot + '/' + filename);
 
     // 提交录音文件识别请求，处理服务端返回的响应。
     const response = await client.submitTask({ Task: JSON.stringify({ ...task, file_link }) }, { method: 'POST' });

@@ -25,7 +25,7 @@ const client = new Client({
     apiVersion: '2018-08-17'
 });
 
-function getResult(taskID) {
+function getResult(filename, taskID) {
     return new Promise((resolve, reject) => {
         const timer = setInterval(async () => {
             try {
@@ -35,14 +35,13 @@ function getResult(taskID) {
                 switch (response.StatusText) {
                     case 'RUNNING':
                     case 'QUEUEING':
-                        // console.log(response); // 继续轮询，注意间隔周期。
+                        console.log(response); // 继续轮询，注意间隔周期。
                         return;
 
                     case 'SUCCESS':
                     case 'SUCCESS_WITH_NO_VALID_FRAGMENT':
                         console.log('录音文件识别成功：' + taskID);
 
-                        const filename = Object.keys(processing_tasks).filter(i => processing_tasks[i] === taskID);
                         delete processing_tasks[filename];
                         await fs.writeJSON(processing_tasks_file_path, processing_tasks);
 
@@ -64,4 +63,4 @@ function getResult(taskID) {
     });
 }
 
-Promise.all(taskID.map(i => getResult(i)));
+Promise.all(Object.keys(processing_tasks).map(i => getResult(i, processing_tasks[i])));
