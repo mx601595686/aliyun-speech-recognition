@@ -1,0 +1,25 @@
+{
+    "name": "aliyun-speech-recognition",
+    "version": "0.0.1",
+    "description": "阿里云语音识别工具包",
+    "scripts": {
+        "recognition": "node src/recognition.js",
+        "transcode": "node src/transcode.js",
+        "get_result_by_taskID": "node src/get_result_by_taskID.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mx601595686/aliyun-speech-recognition.git"
+    },
+    "private": true,
+    "author": "wujingtao",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/mx601595686/aliyun-speech-recognition/issues"
+    },
+    "homepage": "https://github.com/mx601595686/aliyun-speech-recognition#readme",
+    "dependencies": {
+        "@alicloud/nls-filetrans-2018-08-17": "^1.0.0",
+        "fs-extra": "^9.0.1"
+    }
+}
