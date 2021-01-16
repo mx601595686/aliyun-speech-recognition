@@ -12,13 +12,13 @@ const appConfig = require('../app_config');
  * 记录正在处理中的任务
  */
 const processing_tasks_file_path = path.resolve(appConfig.recognitionResultsPath, 'processing_tasks.json');
-const processing_tasks = fs.readJsonSync(processing_tasks_file_path, { throws: false }) || {};
+const processing_tasks = {};
 
 /**
  * 要识别的文件列表
  */
 const taskList = fs.readdirSync(appConfig.transcodeAudiosPath)
-    .filter(i => path.extname(i) == '.mp3' && !(i in processing_tasks));
+    .filter(i => path.extname(i) == '.mp3');
 
 /**
  * 创建阿里云鉴权client
