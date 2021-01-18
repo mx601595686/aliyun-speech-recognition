@@ -17,13 +17,13 @@ rl.question('将媒体文件转换成阿里云要求的格式与编码\n\n' + '�
     if (inputPath == '') process.exit();
 
     const files = fs.readdirSync(inputPath)
-        .filter(i => /.(wav|mpeg|mp3|mp4|webm|aac|aacp|ogg|flac|rm|rmvb|3gp|avi|mpg|mov|mkv)$/i.test(path.extname(i)))
+        .filter(i => /.(wav|mpeg|mp3|mp4|m4a|webm|aac|aacp|ogg|flac|rm|rmvb|3gp|avi|mpg|mov|mkv)$/i.test(path.extname(i)))
         .map(i => path.resolve(inputPath, i))
         .filter(i => fs.statSync(i).isFile());
 
     for (let index = 0; index < files.length; index++) {
         const meta = path.parse(files[index]);
-        console.log(`\n开始转换 [${index} / ${files.length}]：${meta.base}\n`);
+        console.log(`\n开始转换 [${index + 1} / ${files.length}]：${meta.base}\n`);
 
         meta.ext = '.mp3';
         meta.dir = outputPath;

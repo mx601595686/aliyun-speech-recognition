@@ -61,7 +61,7 @@ async function submitTask(filename) {
     try {
         for (let index = 0; index < taskList.length; index++) {
             const filename = taskList[index];
-            console.log(`开始提交 [${index} / ${taskList.length}]：${filename}`);
+            console.log(`开始提交 [${index + 1} / ${taskList.length}]：${filename}`);
             const taskID = await submitTask(filename);
             processing_tasks[filename] = taskID;
         }
