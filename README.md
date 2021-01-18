@@ -12,14 +12,17 @@
 
 ```js
 const path = require('path');
+const pinyin = require('pinyin');
 
 module.exports = {
-    accessKeyId: 'Kyo3asd90lVU7ttN', // 您的AccessKey Id
-    secretAccessKey: 'B2asdVJTaBwyUQ6ANxxe3BwnrRfoqg', // 您的AccessKey Secret
-    appkey: 'z67UTmyasdC8byNK', // 您的appkey
-    recognitionResultsPath: path.resolve(__dirname, 'recognition_results'), // 语音识别结果保存位置
-    transcodeAudiosPath: path.resolve(__dirname, 'transcode_audios'), // 音频转码保存位置
-    fileServerRoot: 'http://program-hub.cn/index', // 文件服务器根路径
+    accessKeyId: 'Kyoasdz90lVU7ttN',                        // 您的AccessKey Id
+    secretAccessKey: 'B2asdVJTaBwyUQ6ANxxe3BwnrRfoqg',      // 您的AccessKey Secret
+    appkey: 'z67asdyn0aC8byNK',                             // 您的appkey
+    recognitionResultsPath: path.resolve(__dirname, 'recognition_results'),     // 语音识别结果保存位置
+    transcodeAudiosPath: path.resolve(__dirname, 'transcode_audios'),           // 音频转码保存位置
+    fileServerRoot: 'http://program-hub.cn/index',                              // 文件服务器根路径
+    reviseTextPath: path.resolve(__dirname, 'revise_text'),                     // 修订文本路径
+    pinyinOption: { segment: true, style: pinyin.STYLE_TONE2 }                  // 为文字标注拼音 设置方法参考 https://github.com/hotoo/pinyin
 };
 ```
 
@@ -38,3 +41,7 @@ module.exports = {
 检查识别进度，将识别结果保存到 `recognitionResultsPath`。
 
 `recognitionResultsPath` 目录下的 `processing_tasks.json` 记录的是还没有收到结果或者识别失败的任务。
+
+## npm run add_pinyin
+
+为语音识别结果添加拼音

@@ -5,7 +5,8 @@
     "scripts": {
         "receive_result": "node tools/receive_result.js",
         "submit_task": "node tools/submit_task.js",
-        "transcode": "node tools/transcode.js"
+        "transcode": "node tools/transcode.js",
+        "add_pinyin": "node tools/add_pinyin.js"
     },
     "repository": {
         "type": "git",
@@ -20,6 +21,8 @@
     "homepage": "https://github.com/mx601595686/aliyun-speech-recognition#readme",
     "dependencies": {
         "@alicloud/nls-filetrans-2018-08-17": "^1.0.0",
-        "fs-extra": "^9.0.1"
+        "fs-extra": "^9.0.1",
+        "lodash": "^4.17.20",
+        "pinyin": "^2.9.1"
     }
 }
