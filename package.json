@@ -10,15 +10,15 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/mx601595686/aliyun-speech-recognition.git"
+        "url": "git+https://github.com/wu-jingtao/aliyun-speech-recognition.git"
     },
     "private": true,
     "author": "wujingtao",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/mx601595686/aliyun-speech-recognition/issues"
+        "url": "https://github.com/wu-jingtao/aliyun-speech-recognition/issues"
     },
-    "homepage": "https://github.com/mx601595686/aliyun-speech-recognition#readme",
+    "homepage": "https://github.com/wu-jingtao/aliyun-speech-recognition#readme",
     "dependencies": {
         "@alicloud/nls-filetrans-2018-08-17": "^1.0.0",
         "fs-extra": "^9.0.1",
